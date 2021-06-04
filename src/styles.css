@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.main{
+    /* background-color: rgb(239, 239, 243); */
+    color: rgb(27, 15, 15);
+}
+.exp {
+    height: 50px;
+}

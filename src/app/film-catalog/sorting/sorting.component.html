@@ -1,0 +1,20 @@
+<!-- <p>sorting works!</p> -->
+<div class="dropdown">
+  <button class="btn btn-light dropdown-toggle w-100 justify-content-start" type="button" id="dropdownMenuSorting"
+    data-bs-toggle="dropdown" aria-expanded="false">
+    Сортировать
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuSorting">
+
+    <li><button type="button" class="dropdown-item" (click)="sortingMoviesByDecrease()">По популярности(убывание)</button></li>
+
+    <li><button type="button" class="dropdown-item" (click)="sortingMoviesByIncrease()">По популярности(спадания)</button></li>
+    <li><button type="button" class="dropdown-item" (click)="sortingMoviesByDecreaseRating()">Рейтиг(убывания)</button></li>
+    <li><button type="button" class="dropdown-item" (click)="sortingMoviesByIncreaseRating()">Рейтиг(возростания)</button></li>
+    <li><button type="button" class="dropdown-item"(click)="sortingMoviesByDecreaseDate()">Дата выпуска(убывание)</button></li>
+    <li><button type="button" class="dropdown-item" (click)="sortingMoviesByIncreaseDate()">Дата выпуска(возростание)</button></li>
+    <li><button type="button" class="dropdown-item" (click)="sortingMoviesByDecreaseTitle()">По названию(А-Я)</button></li>
+    <li><button type="button" class="dropdown-item" (click)="sortingMoviesByIncreaseTitle()">По названию(Я-А)</button></li>
+   
+  </ul>
+</div>

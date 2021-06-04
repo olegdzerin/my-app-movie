@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="body">
+  
+      <div class="card-title" #name>{{film.title}}</div>
+      <div>{{film.release_date}}</div>
+  
+      <!-- <img mat-card-image [src]="film.poster_path" onError="this.src='assets/my/fancy/loader.gif;'" alt="{{film.title}}"> -->
+      <button (click)="oneFilm()">
+        <img class="card-img-top" [src]="film.poster_path" alt="{{film.title}}">
+      </button>
+      <!-- <img *ngIf="loading" src="/assets/loading.gif" alt="loading" /> -->
+  
+      <!-- <img [hidden]="loading" (load)="onLoad()" src="{{film.poster_path}}" /> -->
+      <div class="card-text">
+        <!-- <p>
+          {{film.overview | slice:0:120}}...
+  
+        </p> -->
+      </div>
+      <div>
+        <button color="primary">
+          <i class="material-icons">
+            play_arrow
+          </i>
+        </button>
+        <button color="primary">
+          <i class="material-icons">
+            menu
+          </i>
+        </button>
+        <!-- <button *ngIf="!film.isFavorite;else fab"  color="primary" (click)="starFilm(film)"> -->
+        <!-- <i class="material-icons">star</i>
+        </button> -->
+      </div>
+    </div>
+  </div>

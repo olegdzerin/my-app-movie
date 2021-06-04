@@ -1,0 +1,13 @@
+button{
+    margin-bottom: 5px;
+    text-align: start;
+    border-radius: 6px;
+   
+    border: rgb(220, 233, 233);
+    border-color: rgb(176, 201, 201);
+   /* background: darkviolet; */
+   /* border-style: dashed; */
+   border: thin solid rgb(64, 64, 71);
+   /* border-bottom-width: thick; */
+   box-shadow: 2px 2px  grey;
+  }

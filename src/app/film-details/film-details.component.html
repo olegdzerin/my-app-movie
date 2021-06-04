@@ -1,0 +1,66 @@
+
+
+<div class="container-fluid cont">
+  <div class=" container-fluid container-lg" id="contain">
+    <div class="d-flex m-0">
+      <div class="card">
+        <div class="body">
+
+          <div class="card-title " #name>{{film.title}}</div>
+          <div>{{film.release_date}}</div>
+
+          <!-- <img mat-card-image [src]="film.poster_path" onError="this.src='assets/my/fancy/loader.gif;'" alt="{{film.title}}"> -->
+          <button (click)="aboutFilm()">
+            <img class="card-img-top" [src]="film.poster_path" alt="{{film.title}}">
+          </button>
+          <!-- <img *ngIf="loading" src="/assets/loading.gif" alt="loading" /> -->
+
+          <!-- <img [hidden]="loading" (load)="onLoad()" src="{{film.poster_path}}" /> -->
+          <div class="card-text">
+            <!-- <p>
+              {{film.overview | slice:0:120}}...
+      
+            </p> -->
+          </div>
+          <div>
+            <button color="primary">
+              <i class="material-icons">
+                play_arrow
+              </i>
+            </button>
+            <button color="primary">
+              <i class="material-icons">
+                menu
+              </i>
+            </button>
+            <!-- <button *ngIf="!film.isFavorite;else fab"  color="primary" (click)="starFilm(film)"> -->
+            <!-- <i class="material-icons">star</i>
+            </button> -->
+          </div>
+        </div>
+      </div>
+      <div class="card bg-transparent" >
+        <div class="card-body">
+          <h4 class="card-title">{{film.title}} ({{film.release_date|slice:0:4}})</h4>
+          <h4 class="card-title" style="display: inline;">R:{{film.release_date.replace('-','/').replace('-','/')}}({{film.production_countries[0].iso_3166_1}}) </h4>
+          <h4 style="display: inline;"  *ngFor="let item of film.genres">{{item.name}}, </h4>
+          <h4 style="display: inline;">*{{transformRuntime()}}  </h4>
+         
+        
+          <h6 class="card-subtitle mb-2 text-muted">{{film.release_date}}</h6>
+          <h4>Обзор</h4>
+          <p class="card-text">{{film.overview}}</p>
+
+          <div class="d-flex">
+            <h4></h4>
+          </div>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{film.id}}
+
+<router-outlet></router-outlet>

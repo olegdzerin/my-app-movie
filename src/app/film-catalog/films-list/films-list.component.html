@@ -1,0 +1,92 @@
+<!-- <app-search-films (searchF)="makeSearchFilms($event)"></app-search-films> -->
+<!-- <mat-spinner class="spinner-position" *ngIf="activeSpinner"></mat-spinner> -->
+
+
+<h1>Popular Film</h1>
+<div class="d-flex">
+  <div class=" bg-light m-3 mt-0 side-bar">
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item" *ngFor = "let link of links; 
+       index as i">
+       
+         <app-sorting *ngIf="i === 0" (sortMovies)="makeShowFilms($event)"></app-sorting>
+         <app-filter *ngIf="i === 1"></app-filter>
+         <app-where-watch *ngIf="i === 2"></app-where-watch>
+      </li>
+      <!-- <li class="nav-item">
+        <div class="dropdown">
+          <button class="btn btn-light dropdown-toggle w-100 justify-content-start" type="button"
+            id="dropdownMenuSorting" data-bs-toggle="dropdown" aria-expanded="false">
+            Сортировать
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuSorting">
+            <li><a class="dropdown-item" href="#">По популярности(возротание)</a></li>
+            <li><a class="dropdown-item" href="#">По популярности(спадание)</a></li>
+            <li><a class="dropdown-item" href="#">Рейтиг(убывания)</a></li>
+            <li><a class="dropdown-item" href="#">Рейтиг(возростания)</a></li>
+            <li><a class="dropdown-item" href="#">Дата выпуска(возростание)</a></li>
+            <li><a class="dropdown-item" href="#">Дата выпуска(убывание)</a></li>
+            <li><a class="dropdown-item" href="#">По названию(А-Я)</a></li>
+            <li><a class="dropdown-item" href="#">По названию(Я-А)</a></li>
+          </ul>
+        </div>
+
+      </li>
+      <li class="nav-item">
+        <div class="dropdown">
+          <button class="btn btn-light dropdown-toggle w-100" type="button" id="dropdownMenuFilter"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Фльтры
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuFilter">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div class="dropdown">
+          <button class="btn btn-light dropdown-toggle w-100" type="button" id="dropdownMenuWhereWatch"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Где посмотреть
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuWhereWatch">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </li> -->
+      <li class="nav-item w-max  justify-content-center">
+        <div class="">
+          <button type="button" id="search" class="btn btn-light w-100  ">Поиск</button>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let film of filmsData ">
+        <app-film-item [film]="film " [counter]="counter" (star)="makeStarFilms($event) "></app-film-item>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="main-container ">
+  <div class="fixer-container ">
+    <button color="primary" (click)="setPagingFilms()" [class.a]="!variantDisplay" [disabled]="false">Загрузить
+      еще</button>
+  </div>
+</div>
+
+<div class="main-container ">
+  <div class="fixer-container ">
+    <button color="primary" (click)="setPagingSearchFilms()" [class.a]="variantDisplay" [disabled]="false">Загрузить еще
+      происковый</button>
+  </div>
+</div>

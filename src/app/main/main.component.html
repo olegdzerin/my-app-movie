@@ -1,0 +1,17 @@
+<div class="wrapper">
+
+    <h2>Вас приветсвует приложение о фильмах</h2><br>
+
+    <a href={{website.url}}>{{website.title}}</a><br>
+    <a href={{movieUrl}}>{{movieUrl}}</a><br>
+    <a href={{imgPath}}>{{imgPath}}</a><br>
+    <a href={{movieUrl}}>{{aliasConfigService.movieUrl}}</a><br>
+
+
+    <div>some text {{pageName}}</div>
+    <span [class.red]="isRed">Красный</span>
+    <button  type="button" class="btn btn-primary">btn</button>
+
+</div>
+<!-- <app-film-item [film]="film"></app-film-item> -->
+<router-outlet></router-outlet>
